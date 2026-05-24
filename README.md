@@ -66,7 +66,9 @@ Copy `.env.example` to `.env` and fill in the required values:
 | `OPENAI_API_KEY` | Your OpenAI API key | Yes |
 | `LLM_MODEL` | LLM model to use (default: `gpt-4o-mini`) | No |
 | `EMBEDDING_MODEL` | Embedding model (default: `text-embedding-3-small`) | No |
-| `MAX_TOKENS` | Max tokens per response (default: `2048`) | No |
+| `MAX_TOKENS` | Max tokens per response (default: `4096`) | No |
+
+> **Personal note:** I bumped `MAX_TOKENS` default to `4096` — the original `2048` was frequently cutting off longer explanations when working through dense academic papers.
 
 ## Project Structure
 
@@ -93,12 +95,3 @@ We welcome contributions! Please read our [contributing guidelines](.github/pull
 2. Create a feature branch (`git checkout -b feat/amazing-feature`)
 3. Commit your changes following [Conventional Commits](https://www.conventionalcommits.org/)
 4. Push to the branch and open a Pull Request
-
-## License
-
-This project is licensed under the MIT License. See [LICENSE](LICENSE) for details.
-
-## Acknowledgements
-
-- Original project: [HKUDS/DeepTutor](https://github.com/HKUDS/DeepTutor)
-- Built with [LightRAG](https://github.com/HKUDS/LightRAG), [Gradio](https://gradio.app/), and [LangChain](https://langchain.com/)
