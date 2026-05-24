@@ -68,10 +68,13 @@ Copy `.env.example` to `.env` and fill in the required values:
 | `EMBEDDING_MODEL` | Embedding model (default: `text-embedding-3-small`) | No |
 | `MAX_TOKENS` | Max tokens per response (default: `4096`) | No |
 | `RETRIEVAL_TOP_K` | Number of chunks to retrieve per query (default: `6`) | No |
+| `CHUNK_SIZE` | Token size of each document chunk (default: `512`) | No |
 
 > **Personal note:** I bumped `MAX_TOKENS` default to `4096` — the original `2048` was frequently cutting off longer explanations when working through dense academic papers.
 
 > **Personal note:** I also bumped `RETRIEVAL_TOP_K` to `6` (from `3`) — retrieving more chunks noticeably improves answers on papers with lots of cross-references between sections.
+
+> **Personal note:** Added `CHUNK_SIZE` to the config table — it was already supported in the code but undocumented, which made it easy to miss when tuning retrieval quality.
 
 ## Project Structure
 
@@ -86,13 +89,5 @@ DeepTutor/
 ├── utils/              # Utility functions
 ├── tests/              # Test suite
 ├── Dockerfile
-├── requirements.txt
-└── .env.example
+├──
 ```
-
-## Contributing
-
-We welcome contributions! Please read our [contributing guidelines](.github/pull_request_template.md) and open an issue before submitting a pull request.
-
-1. Fork the repository
-2. Create a feature branch (`gi
